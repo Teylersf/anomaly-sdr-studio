@@ -1,0 +1,11 @@
+Mimalloc 2.1.2 copyright header incorporated into Python 3.13.7.
+https://raw.githubusercontent.com/python/cpython/v3.13.7/Include/internal/mimalloc/mimalloc.h
+
+/* ----------------------------------------------------------------------------
+Copyright (c) 2018-2023, Microsoft Research, Daan Leijen
+This is free software; you can redistribute it and/or modify it under the
+terms of the MIT license. A copy of the license can be found in the file
+"LICENSE" at the root of this distribution.
+-----------------------------------------------------------------------------*/
+
+The complete MIT license is preserved in licenses/python/INCORPORATED-SOFTWARE-LICENSES.rst under mimalloc.

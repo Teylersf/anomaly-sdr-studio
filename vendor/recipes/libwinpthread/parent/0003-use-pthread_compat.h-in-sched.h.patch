@@ -1,0 +1,25 @@
+From 6449dfdf6b4e46e0fae0d10518b7b2bf9d1b9bc4 Mon Sep 17 00:00:00 2001
+From: Isuru Fernando <isuruf@gmail.com>
+Date: Mon, 26 Aug 2024 08:47:46 -0500
+Subject: [PATCH 3/3] use pthread_compat.h in sched.h
+
+---
+ mingw-w64-libraries/winpthreads/include/sched.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/mingw-w64-libraries/winpthreads/include/sched.h b/mingw-w64-libraries/winpthreads/include/sched.h
+index bf2848762..14e4c87f5 100644
+--- a/mingw-w64-libraries/winpthreads/include/sched.h
++++ b/mingw-w64-libraries/winpthreads/include/sched.h
+@@ -30,6 +30,8 @@
+ 
+ #include <sys/timeb.h>
+ 
++#include "pthread_compat.h"
++
+ #ifndef WIN_PTHREADS_SCHED_H
+ #define WIN_PTHREADS_SCHED_H
+ 
+-- 
+2.44.0
+

@@ -1,0 +1,57 @@
+context:
+  name: libusb
+  version: "1.0.30"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/libusb/libusb/releases/download/v${{ version }}/${{ name }}-${{ version }}.tar.bz2
+  sha256: fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf
+
+build:
+  number: 0
+
+requirements:
+  run_exports:
+    - ${{ pin_subpackage(name) }}
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    # cmake is only for doing string substitution for creating pkg-config file
+    - if: win
+      then:
+        - cmake
+    - if: unix
+      then:
+        - libtool
+        - make
+        - gnuconfig
+        - automake 1.17.*
+
+  host:
+    - if: linux
+      then: libudev
+
+tests:
+  - package_contents:
+      include:
+        - libusb-1.0/libusb.h
+      lib:
+        - libusb-1.0
+
+about:
+  homepage: http://libusb.info/
+  license: LGPL-2.1-or-later
+  license_file: COPYING
+  summary: A cross-platform library to access USB devices
+  documentation: http://libusb.sourceforge.net/api-1.0/
+  repository: https://github.com/libusb/libusb
+
+extra:
+  feedstock-name: libusb
+  recipe-maintainers:
+    - hoechenberger
+    - kastman
+    - ryanvolz

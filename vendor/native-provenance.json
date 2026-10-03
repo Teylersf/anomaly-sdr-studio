@@ -1,0 +1,66 @@
+[
+  {
+    "component": "hackrf",
+    "package": "hackrf-2024.02.1-hc14e81b_1.conda",
+    "url": "https://conda.anaconda.org/conda-forge/win-64/hackrf-2024.02.1-hc14e81b_1.conda",
+    "sha256": "67b73e897e3f95db42ad635faf6f295acbc19df916fbe775005b98ee6ab8545e"
+  },
+  {
+    "component": "libhackrf0",
+    "package": "libhackrf0-2024.02.1-h2466b09_1.conda",
+    "url": "https://conda.anaconda.org/conda-forge/win-64/libhackrf0-2024.02.1-h2466b09_1.conda",
+    "sha256": "1a8b5a6103de8ec936c17b7ae68d86475ae155ff8a77669ac379c5dbaae703ff"
+  },
+  {
+    "component": "libusb",
+    "package": "libusb-1.0.30-h6a83c73_0.conda",
+    "url": "https://conda.anaconda.org/conda-forge/win-64/libusb-1.0.30-h6a83c73_0.conda",
+    "sha256": "8c64e0d69eb4458100a94c1d1d4c4a52955d0d4931699962b0c407a2a66836a5"
+  },
+  {
+    "component": "libwinpthread",
+    "package": "libwinpthread-12.0.0.r4.gg4f2fc60ca-h57928b3_10.conda",
+    "url": "https://conda.anaconda.org/conda-forge/win-64/libwinpthread-12.0.0.r4.gg4f2fc60ca-h57928b3_10.conda",
+    "sha256": "0fccf2d17026255b6e10ace1f191d0a2a18f2d65088fd02430be17c701f8ffe0"
+  },
+  {
+    "component": "winpthreads-devel",
+    "package": "winpthreads-devel-12.0.0.r4.gg4f2fc60ca-h57928b3_10.conda",
+    "url": "https://conda.anaconda.org/conda-forge/win-64/winpthreads-devel-12.0.0.r4.gg4f2fc60ca-h57928b3_10.conda",
+    "sha256": "d640e8ef78f82cad1584a123f655f0e9fe9a143d8aa5ed503522b04255b0624f"
+  },
+  {
+    "component": "vc14_runtime",
+    "package": "vc14_runtime-14.51.36247-habf1de7_41.conda",
+    "url": "https://conda.anaconda.org/conda-forge/win-64/vc14_runtime-14.51.36247-habf1de7_41.conda",
+    "sha256": "4e4cb599cdc41bf2109d1464c127b5bcbddf548ce3e322e612afb691338b48f8"
+  },
+  {
+    "source_archive": "hackrf-2024.02.1.tar.xz",
+    "url": "https://github.com/greatscottgadgets/hackrf/releases/download/v2024.02.1/hackrf-2024.02.1.tar.xz",
+    "sha256": "d9ced67e6b801cd02c18d0c4654ed18a4bcb36c24a64330c347dfccbd859ad16"
+  },
+  {
+    "source_archive": "libusb-1.0.30.tar.bz2",
+    "url": "https://github.com/libusb/libusb/releases/download/v1.0.30/libusb-1.0.30.tar.bz2",
+    "sha256": "fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf"
+  },
+  {
+    "source_archive": "rtl_433-25.12.tar.gz",
+    "url": "https://codeload.github.com/merbanan/rtl_433/tar.gz/refs/tags/25.12",
+    "sha256": "d283ec7a41a02d398e8918b20b65df3bf684cf4478371830662004005dadcdd2"
+  },
+  {
+    "source_archive": "mingw-w64-dc42231f0392f75de72e87ba0170ec60fcc6c10b.tar.gz",
+    "url": "https://codeload.github.com/mingw-w64/mingw-w64/tar.gz/dc42231f0392f75de72e87ba0170ec60fcc6c10b",
+    "sha256": "14d20d9cc584af2c72c9cf392cca8792920df96d92369dbe6b12a5a82ada761e"
+  },
+  {
+    "component": "rtl_433",
+    "archive": "rtl_433-win-msvc-x64-25.12.zip",
+    "url": "https://github.com/merbanan/rtl_433/releases/download/25.12/rtl_433-win-msvc-x64-25.12.zip",
+    "sha256": "088a00aa5446c8f859346a93320fb2ae353b7689a1c53b4a5bb20df0ff1c1151",
+    "executable_sha256": "7a72a4b0b282e52e1444686c7ff379e5ce4bdeeeaa5183e686f3f5d0d4516bd6",
+    "build": "Official Windows x64 file-only executable; hardware variants excluded"
+  }
+]

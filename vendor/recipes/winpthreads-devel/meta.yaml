@@ -1,0 +1,51 @@
+# This file created by conda-build 25.9.0
+# ------------------------------------------------
+
+package:
+  name: winpthreads-devel
+  version: 12.0.0.r4.gg4f2fc60ca
+source:
+  git_url: https://github.com/mingw-w64/mingw-w64
+  git_rev: dc42231f0
+  patches:
+    - 0001-Allow-to-use-bessel-and-complex-functions-without-un.patch
+    - 0002-heades-add-full-name-winrt.patch
+    - 0003-use-pthread_compat.h-in-sched.h.patch
+build:
+  merge_build_host: false
+  run_exports:
+    - libwinpthread >=12.0.0.r4.gg4f2fc60ca
+  number: 10
+  string: h57928b3_10
+requirements:
+  build:
+    - _libgcc_mutex 0.1 conda_forge
+    - _openmp_mutex 4.5 2_gnu
+    - gcc_bootstrap_win-64 15.1.0 hd42808a_11
+    - libgcc 15.2.0 h767d61c_5
+    - libgomp 15.2.0 h767d61c_5
+    - make 4.4.1 hb9d3cd8_2
+  host:
+    - libwinpthread 12.0.0.r4.gg4f2fc60ca h57928b3_10
+    - ucrt 10.0.26100.0 h57928b3_0
+  run:
+    - libwinpthread 12.0.0.r4.gg4f2fc60ca h57928b3_10
+test:
+  commands: null
+about:
+  home: https://www.mingw-w64.org/
+  license: MIT AND BSD-3-Clause-Clear
+  license_file:
+    - COPYING.MinGW-w64/COPYING.MinGW-w64.txt
+    - mingw-w64-libraries/winpthreads/COPYING
+  summary: 'MinGW-w64 winpthreads library headers
+
+    '
+extra:
+  recipe-maintainers:
+    - isuruf
+  final: true
+  copy_test_source_files: true
+  flow_run_id: azure_20251006.2.1
+  remote_url: https://github.com/conda-forge/m2w64-sysroot-feedstock
+  sha: a4af9fca14ce01a464814f50d39694ddd464ab75

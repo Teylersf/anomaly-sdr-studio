@@ -1,0 +1,7 @@
+OpenSSL 3.0.16
+Copyright 1998-2025 The OpenSSL Authors. All rights reserved.
+
+This version accompanies the Python 3.13.7 Windows runtime and is licensed under the Apache License 2.0 supplied in LICENSE.txt. The copyright line above is preserved from the included libcrypto-3.dll version resource. The DLL files remain unmodified.
+
+Upstream license: https://github.com/openssl/openssl/blob/openssl-3.0.16/LICENSE.txt
+Python dependency version: https://github.com/python/cpython/blob/v3.13.7/PCbuild/get_externals.bat

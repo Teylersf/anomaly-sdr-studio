@@ -1,0 +1,33 @@
+name: Windows checks and build
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.7'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build, check, and package offline
+        shell: pwsh
+        run: ./Build-Windows.ps1 -ReleaseBuild
+      - name: Verify portable entry point
+        shell: pwsh
+        run: |
+          & '.\dist\AnomalySDRStudio\AnomalySDRStudio.exe' --version
+          if ($LASTEXITCODE -ne 0) { throw 'Portable entry point failed.' }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: anomaly-sdr-studio-windows-x64
+          path: release/*
+          if-no-files-found: error
+          retention-days: 7

@@ -1,0 +1,48 @@
+--- a/host/libhackrf/src/hackrf.c
++++ b/host/libhackrf/src/hackrf.c
+@@ -545,7 +545,8 @@
+ 	libusb_device_handle* usb_device = NULL;
+ 	uint8_t serial_descriptor_index;
+ 	char serial_number[64];
+-	uint8_t idx, serial_number_length;
++	uint8_t idx;
++	int serial_number_length;
+ 
+ 	hackrf_device_list_t* list = calloc(1, sizeof(*list));
+ 	if (list == NULL)
+@@ -592,6 +593,12 @@
+ 							serial_descriptor_index,
+ 							(unsigned char*) serial_number,
+ 							sizeof(serial_number));
++					if (serial_number_length < 0 ||
++					    serial_number_length >= (int) sizeof(serial_number)) {
++						libusb_close(usb_device);
++						usb_device = NULL;
++						continue;
++					}
+ 					if (serial_number_length >= USB_MAX_SERIAL_LENGTH)
+ 						serial_number_length =
+ 							USB_MAX_SERIAL_LENGTH;
+@@ -670,10 +677,22 @@
+ 								(unsigned char*)
+ 									serial_number,
+ 								sizeof(serial_number));
++						if (serial_number_length < 0 ||
++						    serial_number_length >= (int) sizeof(serial_number)) {
++							libusb_close(usb_device);
++							usb_device = NULL;
++							continue;
++						}
+ 						if (serial_number_length >=
+ 						    USB_MAX_SERIAL_LENGTH)
+ 							serial_number_length =
+ 								USB_MAX_SERIAL_LENGTH;
++						if (serial_number_length < match_len) {
++							libusb_close(usb_device);
++							usb_device = NULL;
++							continue;
++						}
++
+ 						serial_number[serial_number_length] = 0;
+ 						if (strncmp(serial_number +
+ 								    serial_number_length -

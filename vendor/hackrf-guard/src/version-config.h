@@ -1,0 +1,2 @@
+#define LIBRARY_VERSION "0.9"
+#define LIBRARY_RELEASE "2024.02.1"
