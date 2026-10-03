@@ -14,7 +14,7 @@ The app starts these programs as separate child processes. Its Windows release i
 
 ## libhackrf
 
-`hackrf-0.dll` is a project-local rebuild of **libhackrf 2024.02.1**, licensed under **BSD-3-Clause**. The original library notices for Great Scott Gadgets, Jared Boone, and Benjamin Vernoux remain in its source.
+`hackrf-0.dll` is a project-local rebuild of **libhackrf 2024.02.1**, licensed under **BSD-3-Clause**. The original library copyright, conditions, and disclaimer for Great Scott Gadgets, Jared Boone, and Benjamin Vernoux are reproduced verbatim in [licenses/libhackrf0/BSD-3-Clause.txt](licenses/libhackrf0/BSD-3-Clause.txt), included with both the Windows package and corresponding source. The package-level `COPYING` is preserved separately; it does not replace the library's BSD notice.
 
 The local patch guards USB serial-descriptor reads against failed, oversized, or too-short results before buffer access. It changes no radio firmware or modulation. Original source, patched source, the patch, and build instructions accompany the release. This local build is not an official upstream release or endorsement. [Original library source](https://github.com/greatscottgadgets/hackrf/blob/v2024.02.1/host/libhackrf/src/hackrf.c).
 
@@ -24,7 +24,7 @@ The optional file-only decoder binary is **rtl_433 25.12**, licensed under **GPL
 
 - [Official release](https://github.com/merbanan/rtl_433/releases/tag/25.12)
 - [Program source and license header](https://github.com/merbanan/rtl_433/blob/25.12/src/rtl_433.c)
-- Bundled license: `licenses/rtl_433/COPYING`
+- Bundled license: `licenses/rtl_433/COPYING`; [incorporated permissive source notices](licenses/rtl_433/PERMISSIVE-SOURCE-NOTICES.txt) preserve the additional copyright and conditions from the upstream header.
 
 The app feeds finite local files to this decoder. The executable remains a separately licensed third-party program; supported-protocol recognition is not a claim of upstream endorsement.
 
@@ -33,7 +33,7 @@ The app feeds finite local files to this decoder. The executable remains a separ
 | Component | License or terms | Included notices |
 | --- | --- | --- |
 | libusb 1.0.30 | LGPL-2.1-or-later | `licenses/libusb/COPYING`, original source headers, corresponding source and recipe |
-| libwinpthread / winpthreads | MIT with incorporated BSD notices | `licenses/libwinpthread` and `licenses/winpthreads-devel`, including mingw-w64 and Lockless notices |
+| libwinpthread / winpthreads | MIT with incorporated BSD notices | `licenses/libwinpthread` and `licenses/winpthreads-devel`, including mingw-w64 and Lockless notices, plus [original source license headers](licenses/libwinpthread/SOURCE-LICENSE-HEADERS.txt) for Intel and Berkeley portions |
 | Microsoft Visual C++ runtime | Microsoft redistribution terms | Original terms and REDIST reference under `licenses/microsoft-runtime`; Conda recipe notices remain under `licenses/vc14_runtime` |
 
 libusb is dynamically loaded through the native library; its corresponding source is supplied. Original component licenses and build recipes remain available in the source ZIP. System-provided Windows components are not relicensed by this app.
